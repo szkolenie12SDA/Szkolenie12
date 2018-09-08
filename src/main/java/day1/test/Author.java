@@ -4,25 +4,29 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Author {
-    private String name;
+    private String firstName;
     private String lastName;
     private Set<Book> books = new HashSet<>();
+
+    public Author(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+
+    public void addBook(Book angular) {
+        books.add(angular);
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
 
     public Set<Book> getBooks() {
         return books;
     }
-
-    public Author() {
-    }
-
-    public Author(String name, String lastName) {
-        this.name = name;
-        this.lastName = lastName;
-    }
-
-    public void addBook(Book book) {
-        books.add(book);
-    }
-
-
 }

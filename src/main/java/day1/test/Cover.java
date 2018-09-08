@@ -1,15 +1,15 @@
 package day1.test;
 
 public enum Cover {
-    SOFT("miekka"),
-    HARD("twarda");
-    private String name;
+    HARD("twarda"), SOFT("miękka");
 
-    Cover(String name) {
-        this.name = name;
+    private String cover;
+
+    Cover(String cover) {
+        this.cover = cover;
     }
 
-    public String getName() {
-        return name;
+    public String getCover() {
+        return cover;
     }
 }

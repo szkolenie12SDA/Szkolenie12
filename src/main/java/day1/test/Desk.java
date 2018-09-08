@@ -5,26 +5,30 @@ import java.util.Collections;
 import java.util.List;
 
 public class Desk {
-    private List<Book> books = new ArrayList<>();
+    private List<Book> list = new ArrayList<>();
 
-    public void addBook(Book b) {
-       books.add(b);
+    public void addBook(Book book) {
+        list.add(book);
     }
+
     public String getBooks() {
-       List<Book> tempBooks = new ArrayList<>(books);
-        Collections.sort(tempBooks);
-        StringBuilder name = new StringBuilder();
-        for (Book oneBook : tempBooks) {
-            name.append(oneBook).append('\n');
+        String res = "";
+        Collections.sort(list);
+        for (Book b : list) {
+            res = res + b +"\n";
         }
-
-
-        return name.toString();
+        return res;
     }
+
+
+
+
+
+
     public void removeBook(Book book) throws BookNotExistOnTheDesk {
-        if(books.contains(book)){
-            books.remove(book);
-        }else {
+        if(list.contains(book)) {
+            list.remove(book);
+        } else {
             throw new BookNotExistOnTheDesk();
         }
     }
