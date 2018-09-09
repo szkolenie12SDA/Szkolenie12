@@ -55,14 +55,33 @@ public class Main {
 
         return something;
     }
+    private <T extends Person> T methodOfPerson(T person){
+        if(person instanceof Student){
+            person.someMethod("Student");
+        }
+        if(person instanceof Director){
+            person.someMethod("Dyrektor");
+        }
+        if(person instanceof Teacher){
+            person.someMethod("Nauczyciel");
+        }
+        return person;
+    }
+    private void sample5(){
+        Student student=new Student();
+        methodOfPerson(student);
+        System.out.println(student);
+    }
 
     public static void main(String[] args) {
         Main main = new Main();
 //        main.sampleBook();
 //        main.sampleCalculator();
-        System.out.println(main.sampleGeneric(12, 43));
-        System.out.println(main.sampleGeneric(12., 43.));
-        System.out.println(main.sampleGeneric(12., 43));
+        //System.out.println(main.sampleGeneric(12, 43));
+       // System.out.println(main.sampleGeneric(12., 43.));
+       // System.out.println(main.sampleGeneric(12., 43));
+
+        main.sample5();
 
 
     }

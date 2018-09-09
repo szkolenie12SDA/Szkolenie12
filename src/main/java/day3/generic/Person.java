@@ -5,6 +5,7 @@ public abstract class Person {
     protected String lastName;
     protected int age;
     protected Status status;
+    protected String someA;
 
     public Person() {
     }
@@ -44,7 +45,12 @@ public abstract class Person {
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
                 ", status=" + status +
+                ", something="+someA+
                 '}';
+    }
+    public void someMethod(String someA){
+        this.someA=someA;
+        System.out.println(status.name()+"-"+someA);
     }
 
 }
