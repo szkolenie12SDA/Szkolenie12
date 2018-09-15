@@ -1,15 +1,18 @@
 package bookStore.utils;
 
-public class MainList<T> {
-    private Object[] table = new Object[0];
+import java.lang.reflect.Array;
 
+public class MainList<T> {
+//    private T[] table = (T[]) new Object[0];
+    Class<T> clazz;
+    private T[] table = (T[]) Array.newInstance(clazz, 0);
     public void add(T item) {
         increaseTable();
         table[table.length - 1] = item;
     }
 
     private void increaseTable() {
-        Object[] tempTable = new Object[table.length + 1];
+        T[] tempTable = (T[]) Array.newInstance(clazz,table.length + 1);
         for (int i = 0; i < table.length; i++) {
             tempTable[i] = table[i];
         }
@@ -21,7 +24,7 @@ public class MainList<T> {
         }
         int i = 0;
         int j = 0;
-        Object[] tempTable = new Object[table.length-1];
+        T[] tempTable = (T[]) new Object[table.length-1];
         // TODO: trzeba dokonczyc petle FOR
 
     }
@@ -31,6 +34,6 @@ public class MainList<T> {
     }
 
     public T[] getTable() {
-        return (T[]) table;
+        return table;
     }
 }

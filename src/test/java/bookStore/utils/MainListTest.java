@@ -23,14 +23,14 @@ public class MainListTest {
         mainList.add(testString);
         assertArrayEquals(table, mainList.getTable());
     }
+
     @Test
     public void addCheckSizeTest(){
         MainList<String> mainList = new MainList<>();
         mainList.add(testString);
         mainList.add(testString);
         mainList.add(testString);
-        String[] temp = mainList.getTable();
-        int mainListLength = temp.length;
+        int mainListLength = mainList.getTable().length;
         System.out.println(mainListLength);
         int expectedLength = 3;
         assertEquals(expectedLength,mainListLength);
