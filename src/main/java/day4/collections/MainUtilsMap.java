@@ -38,7 +38,13 @@ public class MainUtilsMap {
         map.put(4, "Funkcja 4");
         map.put(5, "Funkcja 5");
         System.out.println(map.get(1));
+//        ff(map.get(1));
     }
+
+//    private void ff(Object o) {
+//
+//    }
+
 
     public static void main(String[] args) {
         new MainUtilsMap().testMap2();
