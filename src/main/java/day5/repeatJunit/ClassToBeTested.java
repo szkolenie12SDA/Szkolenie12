@@ -2,13 +2,6 @@ package day5.repeatJunit;
 
 public class ClassToBeTested {
 
-
-
-
-
-
-
-
     int addNumbers(int a, int b) {
         if (b == 0) {
             return a;

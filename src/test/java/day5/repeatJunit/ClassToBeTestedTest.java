@@ -35,6 +35,7 @@ public class ClassToBeTestedTest extends ClassToBeTested {
     }
 
     @Test
+    @Ignore
     public void addNumbers_Test3() {
         int a = 5;
         int b = -1;
@@ -59,6 +60,7 @@ public class ClassToBeTestedTest extends ClassToBeTested {
     }
 
     @Test
+    @Ignore
     public void addNumbers_Test6() {
         int a = -5;
         int b = -5;
@@ -86,7 +88,4 @@ public class ClassToBeTestedTest extends ClassToBeTested {
         assertEquals(factorial(a), b);
     }
 
-    @Test
-    public void intToBinary_Test1() {
-    }
 }

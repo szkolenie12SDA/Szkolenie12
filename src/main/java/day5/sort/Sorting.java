@@ -7,15 +7,16 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Sorting {
-    public static int[] createArray(int size){
+    public static int[] createArray(int size) {
         int range = 1000;
         int[] output = new int[size];
-        for(int i = 0; i < size; i++){
+        for (int i = 0; i < size; i++) {
             output[i] = new Random().nextInt(range);
         }
         return output;
     }
-    public static void changeOrder(int a, int b){
+
+    public static void changeOrder(int a, int b) {
         System.out.println("a = " + a + ", b = " + b);
         a = a + b;
         b = a - b;
@@ -23,14 +24,21 @@ public class Sorting {
         System.out.println("a = " + a + ", b = " + b);
 
     }
-    public static int[] insertionSort(int[] array){
+
+    public static int[] insertionSort(int[] array) {
         return array;
     }
 
-    public static int[] bubbleSort(int[] array){
-        for(int i = 0; i < array.length - 1; i++){
-            for(int j = 1; j < array.length; j++){
-                if(array[j - 1] > array[j]){
+    public static int[] bubbleSort(int[] array) {
+        boolean flag = true;
+        for (int i = 0; i < array.length - 1; i++) {
+            if (!flag){
+                break;
+            }
+            flag=false;
+            for (int j = 1; j < array.length - i; j++) {
+                if (array[j - 1] > array[j]) {
+                    flag = true;
                     int temp = array[j];
                     array[j] = array[j - 1];
                     array[j - 1] = temp;
@@ -39,20 +47,22 @@ public class Sorting {
         }
         return array;
     }
-    public static void printArray(int[] array){
+
+    public static void printArray(int[] array) {
         Arrays.stream(array).forEach(o -> System.out.print(o + ", "));
         System.out.println();
     }
 
-    public static void sortTest(){
-        int[] testArray = createArray(20);
-        printArray(testArray);
-        printArray(bubbleSort(testArray));
+    public static void sortTest() {
+//        int[] testArray = createArray(5);
+//        printArray(testArray);
+        int[] tablica={1,2,5,8,9};
+        printArray(bubbleSort(tablica));
 
     }
 
     public static void main(String[] args) {
         sortTest();
-        changeOrder(7, 3);
+//        changeOrder(7, 3);
     }
 }
